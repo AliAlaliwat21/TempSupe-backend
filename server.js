@@ -42,14 +42,18 @@ app.get('/heroes', verifyToken, heroCtrl.index)
 app.get('/heroes/:heroId', verifyToken, heroCtrl.show)
 
 
-//review routes
+//Review routes
 app.post('/heroes/:heroId/reviews', verifyToken, heroCtrl.createReview)
 app.put('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.updateReview)
 app.delete('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.deleteReview)
 
 
-//request routes
-
+//Request routes
+app.post('/service-requests', verifyToken, requestCtrl.createRequest)
+app.get('/service-requests', verifyToken, requestCtrl.index)
+app.get('/service-requests/:requestId', verifyToken, requestCtrl.showRequest)
+app.delete('/service-requests/:requestId', verifyToken, requestCtrl.deleteRequest)
+app.put('/service-requests/:requestId', verifyToken, requestCtrl.updateRequest)
 
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}! 😀`)

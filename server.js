@@ -49,7 +49,8 @@ app.delete('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.deleteRevi
 
 
 //request routes
-
+app.post('/service-requests', verifyToken, requestCtrl.createRequest)
+app.get('/service-requests', verifyToken, requestCtrl.index)
 
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}! 😀`)

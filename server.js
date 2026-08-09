@@ -34,13 +34,22 @@ app.use(morgan('dev'))
 // app.get('/auth/verify-token', authCtrl.verifyToken)
 app.post('/auth/sign-up', authCtrl.signUp)
 app.post('/auth/sign-in', authCtrl.signIn)
-
 app.get('/users', verifyToken, usersCtrl.index)
 
 
 // Hero routes
 app.get('/heroes', verifyToken, heroCtrl.index)
 app.get('/heroes/:heroId', verifyToken, heroCtrl.show)
+
+
+//review routes
+app.post('/heroes/:heroId/reviews', verifyToken, heroCtrl.createReview)
+app.put('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.updateReview)
+app.delete('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.deleteReview)
+
+
+//request routes
+
 
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}! 😀`)

@@ -334,5 +334,5 @@ const deleteReview = async(req, res)=>{
 
     
 
-    module.exports = {initializeHeroes, index, show, createReview, updateReview}
+    module.exports = {initializeHeroes, index, show, createReview, updateReview, deleteReview}
 

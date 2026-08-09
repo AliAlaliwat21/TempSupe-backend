@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const serviceRequestSchema = new mongoose.Schema({
-  user: {
+  requester: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
@@ -13,7 +13,7 @@ const serviceRequestSchema = new mongoose.Schema({
     required: true
   },
 
-  serviceType: {
+  requestType: {
     type: String,
     required: true
   },
@@ -28,7 +28,7 @@ const serviceRequestSchema = new mongoose.Schema({
     required: true
   },
 
-  preferredDate: {
+  requestedDate: {
     type: Date
   },
 
@@ -36,6 +36,6 @@ const serviceRequestSchema = new mongoose.Schema({
     type: String,
     default: 'Submitted'
   }
-})
+}, {timestamps: true})
 
 module.exports = mongoose.model('ServiceRequest', serviceRequestSchema)

@@ -303,12 +303,32 @@ const updateReview = async (req, res)=>{
       if (!review.author.equals(req.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
 
       review.content = req.body.content
-      await Hero.save()
+      await hero.save()
 
       res.status(200).json({message: 'Review updated!'})
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
+}
+
+const deleteReview = async(req, res)=>{
+    try{
+        const hero = await Hero.findById(req.params.heroId)
+        const review = hero.reviews.id(req.params.reviewId)
+
+    if (!hero) return res.status(404).json({ message: 'Hero not found' })
+    
+    if (!review) return res.status(404).json({ message: 'Review not found' })
+    
+    if (!review.author.equals(req.user._id)) return res.status(403).json({message: 'You are NOT authorized to do this!!!'})
+
+        hero.reviews.pull(review)
+
+            await hero.save()
+            res.status(200).json({message: 'deleted successfully'})
+    }catch(error){
+        res.status(500).json({ error: error.message })
+    }
 }
     
 

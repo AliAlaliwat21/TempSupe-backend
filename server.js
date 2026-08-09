@@ -32,7 +32,6 @@ app.use(morgan('dev'))
 // app.get('/auth/verify-token', authCtrl.verifyToken)
 app.post('/auth/sign-up', authCtrl.signUp)
 app.post('/auth/sign-in', authCtrl.signIn)
-
 app.get('/users', verifyToken, usersCtrl.index)
 
 app.listen(PORT, () => {

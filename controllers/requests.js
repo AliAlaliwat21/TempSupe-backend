@@ -13,7 +13,7 @@ const createRequest = async (req, res)=>{
 
         } 
 
-        const createdRequest = await ServiceRequest.create(requestData)
+        const createdRequest = await (await (await ServiceRequest.create(requestData)).populate('requester')).populate('hero')
 
         res.status(201).json(createdRequest)
     } catch (error) {

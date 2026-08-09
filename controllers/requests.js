@@ -85,4 +85,4 @@ const updateRequest = async (req, res)=>{
 }
 
 
-export {createRequest, index, showRequest, deleteRequest, updateRequest}
+module.exports = {createRequest, index, showRequest, deleteRequest, updateRequest}

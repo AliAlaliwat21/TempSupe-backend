@@ -15,12 +15,14 @@ const authCtrl = require('./controllers/auth')
 const usersCtrl = require('./controllers/users')
 const heroCtrl = require('./controllers/heroes')
 const requestCtrl = require('./controllers/requests')
+
 const verifyToken = require('./middleware/verify-token')
 
 mongoose.connect(process.env.MONGODB_URI)
 
-mongoose.connection.on('connected', () => {
+mongoose.connection.on('connected', async () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}. 🥭`)
+  await heroCtrl.initializeHeroes()
 })
 
 app.use(cors())
@@ -34,6 +36,11 @@ app.post('/auth/sign-up', authCtrl.signUp)
 app.post('/auth/sign-in', authCtrl.signIn)
 
 app.get('/users', verifyToken, usersCtrl.index)
+
+
+// Hero routes
+app.get('/heroes', verifyToken, heroCtrl.index)
+app.get('/heroes/:heroId', verifyToken, heroCtrl.show)
 
 app.listen(PORT, () => {
   console.log(`The express app is ready on port ${PORT}! 😀`)

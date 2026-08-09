@@ -1,9 +1,32 @@
 const mongoose = require('mongoose')
 
+const reviewSchema = new mongoose.Schema({
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+
+  rating: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 5
+  },
+
+  content: {
+    type: String,
+    required: true
+  }
+}, {
+  timestamps: true
+})
+
 const heroSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
 
   biography: {
@@ -40,8 +63,15 @@ const heroSchema = new mongoose.Schema({
 
   image: {
     type: String
-  }
-})
+  },
+
+  reviews: [reviewSchema],
+
+  theme: {
+  type: String,
+  required: true
+}
+}, {timestamps: true})
 
 const Hero = mongoose.model('Hero', heroSchema)
 

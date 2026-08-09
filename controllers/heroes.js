@@ -253,7 +253,7 @@ const index = async (req, res) => {
       res.status(500).json({ err: err.message }) 
     } }
 
-    const show = async(req,res)=>{
+const show = async(req,res)=>{
         try{
             const hero = await Hero.findById(req.params.heroId)
 
@@ -265,7 +265,7 @@ const index = async (req, res) => {
             res.status(500).json({err: err.message})
         }
         
-    }
+  }
 
 
         

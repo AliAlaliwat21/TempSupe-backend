@@ -13,7 +13,7 @@ const createRequest = async (req, res)=>{
 
         } 
 
-        const createdRequest = await serviceRequest.create(requestData)
+        const createdRequest = await ServiceRequest.create(requestData)
 
         res.status(201).json(createdRequest)
     } catch (error) {
@@ -23,7 +23,7 @@ const createRequest = async (req, res)=>{
 
 const index = async (req, res)=>{
     try {
-        const allRequests = serviceRequest.find({}).populate('hero').sort({createdAt: 'desc'})
+        const allRequests = ServiceRequest.find({}).populate('hero').sort({createdAt: 'desc'})
 
         if (!allRequests) return res.status(404).json({message: error.message})
 
@@ -33,4 +33,26 @@ const index = async (req, res)=>{
     
 }
 
-export {createRequest, index}
+const showRequest = async (req,res)=>{
+    try{
+        const singleRequest =  await ServiceRequest.findById(req.params.requestId).populate('hero')
+        
+        if(!singleRequest) return res.status(404).json({message: error.message})
+        res.status(200).json(singleRequest)
+    } catch(error){
+res.status(500).json({message: error.message})
+    }
+}
+
+const deleteRequest = async(req,res)=>{
+    try{
+        const deletedRequest = await ServiceRequest.findByIdAndDelete(req.params.requestId) 
+
+        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message: error.message})
+
+            res.status(200).json({message: "deleted successfully"})
+    }catch(error){
+res.status(500).json({message: error.message})
+    }
+}
+export {createRequest, index, showRequest, deleteRequest}

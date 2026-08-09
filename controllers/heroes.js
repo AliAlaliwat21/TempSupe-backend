@@ -1,4 +1,5 @@
 const Hero = require('../models/hero')
+const ServiceRequest = require('../models/serviceRequest')
 
 const heroData = [
   {
@@ -240,8 +241,8 @@ const initializeHeroes = async()=>{
             await Hero.insertMany(heroData)
             console.log('Heroes added to DB')
         }
-    } catch(err){
-        console.log(err)
+    } catch(error){
+        console.log(error)
     }
 }
 
@@ -249,8 +250,8 @@ const index = async (req, res) => {
   try { 
       const heroes = await Hero.find() 
       res.status(200).json(heroes) 
-    } catch (err) { 
-      res.status(500).json({ err: err.message }) 
+    } catch (error) { 
+      res.status(500).json({ error: error.message }) 
     } }
 
 const show = async(req,res)=>{
@@ -261,8 +262,8 @@ const show = async(req,res)=>{
                 return res.status(404).json({err: 'hero not found'})
             }
             res.status(200).json(hero)
-        } catch(err){
-            res.status(500).json({err: err.message})
+        } catch(error){
+            res.status(500).json({error: error.message})
         }
         
   }
@@ -274,7 +275,7 @@ const createReview = async (req, res) => {
 
     if (!hero) {
       return res.status(404).json({
-        err: 'Hero not found'
+        error: 'Hero not found'
       })
     }
 
@@ -289,13 +290,29 @@ const createReview = async (req, res) => {
     await hero.save()
 
     res.status(201).json(hero.reviews[hero.reviews.length - 1])
-  } catch (err) {
-    res.status(500).json({ err: err.message })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
+const updateReview = async (req, res)=>{
+  try {
+      const hero = await Hero.findById(req.params.heroId)
+      const review = hero.reviews.id(req.params.reviewId)
+
+      if (!review.author.equals(req.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
+
+      review.content = req.body.content
+      await Hero.save()
+
+      res.status(200).json({message: 'Review updated!'})
+  } catch (error) {
+    res.status(500).json({ error: error.message })
   }
 }
     
 
     
 
-    module.exports = {initializeHeroes, index, createReview}
+    module.exports = {initializeHeroes, index, createReview, updateReview}
 

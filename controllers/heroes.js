@@ -268,8 +268,33 @@ const show = async(req,res)=>{
   }
 
 
+const createReview = async (req, res) => {
+  try {
+    const hero = await Hero.findById(req.params.heroId)
+
+    if (!hero) {
+      return res.status(404).json({
+        err: 'Hero not found'
+      })
+    }
+
+    const review = {
+      author: req.user._id,
+      rating: req.body.rating,
+      content: req.body.content
+    }
+
+    hero.reviews.push(review)
+
+    await hero.save()
+
+    res.status(201).json(hero.reviews[hero.reviews.length - 1])
+  } catch (err) {
+    res.status(500).json({ err: err.message })
+  }
+}
         
     
 
-    module.exports = {initializeHeroes, index}
+    module.exports = {initializeHeroes, index, createReview}
 

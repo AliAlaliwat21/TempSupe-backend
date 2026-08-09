@@ -30,7 +30,9 @@ const heroData = [
     greatestFeat:
       'Demonstrated overwhelming strength, flight and heat vision capabilities.',
 
-    image: ''
+    image: '',
+
+    theme: 'homelander'
   },
 
   {
@@ -61,7 +63,9 @@ const heroData = [
     greatestFeat:
       'Survived and fought through extremely powerful attacks.',
 
-    image: ''
+    image: '',
+
+    theme: 'queen-maeve'
   },
 
   {
@@ -91,7 +95,9 @@ const heroData = [
     greatestFeat:
       'Reached extraordinary speeds far beyond normal human capability.',
 
-    image: ''
+    image: '',
+
+    theme: 'a-train'
   },
 
   {
@@ -122,7 +128,9 @@ const heroData = [
     greatestFeat:
       'Can operate underwater indefinitely and communicate with marine animals.',
 
-    image: ''
+    image: '',
+
+    theme: 'the-deep'
   },
 
   {
@@ -153,7 +161,9 @@ const heroData = [
     greatestFeat:
       'Completed highly dangerous missions while surviving extreme injuries.',
 
-    image: ''
+    image: '',
+
+    theme: 'black-noir'
   },
 
   {
@@ -184,7 +194,9 @@ const heroData = [
     greatestFeat:
       'Can release powerful energy blasts using absorbed electricity.',
 
-    image: ''
+    image: '',
+
+    theme: 'starlight'
   },
 
   {
@@ -214,7 +226,22 @@ const heroData = [
     greatestFeat:
       'Can become nearly invisible while maintaining highly durable skin.',
 
-    image: ''
+    image: '',
+
+    theme: 'translucent'
   }
 ]
+
+const initializeHeroes = async()=>{
+    try{
+        const existingHeroes = await Hero.find()
+
+        if(existingHeroes.length === 0){
+            await Hero.insertMany(heroData)
+            console.log('Heroes added to DB')
+        }
+    } catch(err){
+        console.log(err)
+    }
+}
 

@@ -245,3 +245,13 @@ const initializeHeroes = async()=>{
     }
 }
 
+const index = async (req, res) => { 
+  try { 
+      const heroes = await Hero.find() 
+      res.status(200).json(heroes) 
+    } catch (err) { 
+      res.status(500).json({ err: err.message }) 
+    } }
+
+    module.exports = {initializeHeroes, index}
+

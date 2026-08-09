@@ -253,5 +253,23 @@ const index = async (req, res) => {
       res.status(500).json({ err: err.message }) 
     } }
 
+    const show = async(req,res)=>{
+        try{
+            const hero = await Hero.findById(req.params.heroId)
+
+            if(!hero){
+                return res.status(404).json({err: 'hero not found'})
+            }
+            res.status(200).json(hero)
+        } catch(err){
+            res.status(500).json({err: err.message})
+        }
+        
+    }
+
+
+        
+    
+
     module.exports = {initializeHeroes, index}
 

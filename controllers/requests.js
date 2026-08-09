@@ -39,6 +39,7 @@ const showRequest = async (req, res)=>{
         
         if(!singleRequest) return res.status(404).json({message: error.message})
 
+
         res.status(200).json(singleRequest)
 
     } catch(error){
@@ -50,9 +51,9 @@ const deleteRequest = async (req, res)=>{
     try{
         const deletedRequest = await ServiceRequest.findByIdAndDelete(req.params.requestId) 
 
-        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message: error.message})
+        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
 
-            res.status(200).json({message: "deleted successfully"})
+        res.status(200).json({message: "deleted successfully"})
     }catch(error){
         res.status(500).json({message: error.message})
     }
@@ -74,6 +75,8 @@ const updateRequest = async (req, res)=>{
         const updatedRequest = await ServiceRequest.findByIdAndUpdate(req.body.requestId, requestData, {new:true})
 
         if (!updatedRequest) return res.status(404).json({message: error.message})
+
+        if (!updatedRequest.requester.equals(req.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
 
         res.status(202).json(updatedRequest)
     } catch (error) {

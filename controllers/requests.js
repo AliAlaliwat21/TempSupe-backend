@@ -48,7 +48,7 @@ const deleteRequest = async(req,res)=>{
     try{
         const deletedRequest = await ServiceRequest.findByIdAndDelete(req.params.requestId) 
 
-        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message: error.message})
+        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message:'You are not authorized to access this'})
 
             res.status(200).json({message: "deleted successfully"})
     }catch(error){

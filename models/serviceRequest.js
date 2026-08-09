@@ -15,7 +15,17 @@ const serviceRequestSchema = new mongoose.Schema({
 
   requestType: {
     type: String,
-    required: true
+    required: true,
+    enum: [
+      'Emergency Response',
+      'VIP Escort',
+      'Event Appearance',
+      'Investigation',
+      'Search and Rescue',
+      'Disaster Assistance',
+      'Security Support',
+      'Other'
+    ]
   },
 
   description: {
@@ -34,6 +44,13 @@ const serviceRequestSchema = new mongoose.Schema({
 
   status: {
     type: String,
+     enum: [
+    'Submitted',
+    'Approved',
+    'In Progress',
+    'Completed',
+    'Cancelled'
+  ],
     default: 'Submitted'
   }
 }, {timestamps: true})

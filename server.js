@@ -38,8 +38,8 @@ app.get('/users', verifyToken, usersCtrl.index)
 
 
 // Hero routes
-app.get('/heroes', verifyToken, heroCtrl.index)
-app.get('/heroes/:heroId', verifyToken, heroCtrl.show)
+app.get('/heroes',  heroCtrl.index)
+app.get('/heroes/:heroId',  heroCtrl.show)
 
 
 //Review routes

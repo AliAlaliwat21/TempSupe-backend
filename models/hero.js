@@ -18,13 +18,6 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  backgroundVideo: {
-  type: String
-},
-
-detailMedia: {
-  type: String
-},
 }, {
   timestamps: true
 })
@@ -80,7 +73,14 @@ const heroSchema = new mongoose.Schema({
   theme: {
   type: String,
   required: true
-}
+},
+  backgroundVideo: {
+  type: String
+},
+
+detailMedia: {
+  type: String
+},
 }, {timestamps: true})
 
 const Hero = mongoose.model('Hero', heroSchema)

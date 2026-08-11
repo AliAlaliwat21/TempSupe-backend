@@ -17,7 +17,14 @@ const reviewSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true
-  }
+  },
+  backgroundVideo: {
+  type: String
+},
+
+detailMedia: {
+  type: String
+},
 }, {
   timestamps: true
 })

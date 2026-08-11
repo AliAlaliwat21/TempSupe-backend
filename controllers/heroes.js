@@ -37,7 +37,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'homelander'
+    theme: 'homelander',
+
+    backgroundGif:
+  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+
+   detailGif:
+  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
   },
 
   {
@@ -73,7 +79,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'queen-maeve'
+    theme: 'queen-maeve',
+
+    backgroundGif:
+  'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
+
+detailGif:
+  'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
   },
 
   {
@@ -108,7 +120,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'a-train'
+    theme: 'a-train',
+
+    backgroundGif:
+  'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
+
+detailGif:
+  'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
   },
 
   {
@@ -144,7 +162,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'the-deep'
+    theme: 'the-deep',
+
+    backgroundGif:
+  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+
+detailGif:
+  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
   },
 
   {
@@ -180,7 +204,15 @@ const heroData = [
 
     image: '',
 
-    theme: 'black-noir'
+    theme: 'black-noir',
+
+    backgroundGif:
+  'https://media.giphy.com/media/HpOzYMoVxeyFZ094sc/giphy.gif',
+
+detailGif:
+  'https://media.giphy.com/media/HpOzYMoVxeyFZ094sc/giphy.gif',
+    
+
   },
 
   {
@@ -216,7 +248,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'starlight'
+    theme: 'starlight',
+
+    backgroundGif:
+  'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',
+
+detailGif:
+  'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',
   },
 
   {
@@ -251,7 +289,13 @@ const heroData = [
 
     image: '',
 
-    theme: 'translucent'
+    theme: 'translucent',
+
+    backgroundGif:
+  'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',
+
+detailGif:
+  'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',
   }
 ]
 

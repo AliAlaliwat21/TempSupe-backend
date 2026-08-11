@@ -33,7 +33,10 @@ const heroSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-
+  detailedBio: {
+    type: String,
+    required:true
+  },
   powers: {
     type: [String],
     required: true

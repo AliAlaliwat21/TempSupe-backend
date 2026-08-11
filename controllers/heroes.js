@@ -1,12 +1,16 @@
 const Hero = require('../models/hero')
 const ServiceRequest = require('../models/serviceRequest')
 
+
 const heroData = [
   {
     name: 'Homelander',
 
     biography:
       'The leader of The Seven and Vought’s most powerful superhero.',
+
+    detailedBio:
+      'Homelander is the leader of The Seven and the most powerful superhero under Vought International. He possesses an overwhelming combination of abilities including flight, superhuman strength, extreme durability, enhanced hearing, enhanced vision, and powerful heat vision. His speed and mobility allow him to respond to incidents across large distances in a very short amount of time. Because of the scale of his abilities, Vought generally reserves Homelander for major threats, large-scale disasters, extremely dangerous situations, and incidents where other heroes may not be strong enough to handle the situation alone. His presence is often treated as Vought’s highest level of response.',
 
     powers: [
       'Flight',
@@ -42,6 +46,9 @@ const heroData = [
     biography:
       'A veteran member of The Seven known for her strength, durability and combat experience.',
 
+    detailedBio:
+      'Queen Maeve is one of the most experienced members of The Seven and is known for her exceptional physical strength, durability, speed, and combat ability. She is capable of surviving extreme impacts, overpowering dangerous opponents, and protecting civilians in situations where ordinary rescue teams would struggle to operate safely. Her years of experience make her particularly effective in high-pressure environments where quick decisions and physical intervention are necessary. Vought commonly assigns Maeve to structural emergencies, protection missions, dangerous rescues, and incidents requiring someone capable of directly confronting physical threats while keeping civilians safe.',
+
     powers: [
       'Super Strength',
       'Enhanced Durability',
@@ -75,6 +82,9 @@ const heroData = [
     biography:
       'The speedster of The Seven and one of the fastest people in the world.',
 
+    detailedBio:
+      'A-Train is The Seven’s primary speed-based superhero and is capable of moving at extraordinary speeds far beyond normal human limits. His enhanced reflexes and agility allow him to react almost instantly while travelling at high speed, making him extremely useful for missions where response time is the most important factor. A-Train can cover large distances within seconds, quickly reach remote locations, transport important items, and assist in searches where speed provides a major advantage. Vought commonly assigns him to urgent deliveries, transportation support, rapid-response missions, missing-person searches, and other time-sensitive situations that do not necessarily require the overwhelming strength of another member of The Seven.',
+
     powers: [
       'Super Speed',
       'Enhanced Reflexes',
@@ -106,6 +116,9 @@ const heroData = [
 
     biography:
       'The aquatic specialist of The Seven with the ability to survive underwater and communicate with marine life.',
+
+    detailedBio:
+      'The Deep is Vought’s specialist for aquatic and marine-related missions. His abilities allow him to breathe underwater indefinitely, swim at enhanced speeds, survive extreme underwater conditions, and communicate directly with marine life. These abilities give him access to environments that most other members of The Seven cannot easily operate in. He is especially effective in underwater search and recovery missions, stranded vessel situations, missing-person searches at sea, ocean inspections, and incidents involving marine animals. When a service request involves deep water, offshore locations, or underwater access, The Deep is usually considered one of Vought’s most suitable choices for the mission.',
 
     powers: [
       'Underwater Breathing',
@@ -140,6 +153,9 @@ const heroData = [
     biography:
       'A silent and highly trained member of The Seven specializing in stealth and combat.',
 
+    detailedBio:
+      'Black Noir is one of The Seven’s most secretive and highly trained members. Unlike heroes who rely primarily on large-scale displays of power, Noir specializes in stealth, infiltration, close-quarters combat, and completing dangerous missions without attracting unnecessary attention. He possesses enhanced strength and durability alongside extensive combat training, allowing him to remain effective even in highly dangerous environments. His quiet and controlled approach makes him particularly useful for surveillance, security operations, dangerous retrieval missions, and situations where discretion is important. Vought often assigns Black Noir to missions that require someone capable of handling serious threats while maintaining a low profile.',
+
     powers: [
       'Enhanced Strength',
       'Enhanced Durability',
@@ -173,6 +189,9 @@ const heroData = [
     biography:
       'A member of The Seven capable of absorbing electricity and producing powerful light-based attacks.',
 
+    detailedBio:
+      'Starlight is a powerful member of The Seven whose abilities revolve around absorbing electrical energy and converting it into intense light and energy attacks. She can release powerful bursts of energy, produce extremely bright flashes, and use her abilities alongside her enhanced physical strength and durability. Her combination of offensive and defensive abilities makes her a flexible option for a wide range of situations. Vought commonly uses Starlight for public safety, civilian protection, crowd control, defensive support, and incidents where large groups of people may need to be protected. Her abilities also make her especially useful in environments with access to electrical power that she can use to strengthen her attacks.',
+
     powers: [
       'Light Manipulation',
       'Energy Blasts',
@@ -205,6 +224,9 @@ const heroData = [
 
     biography:
       'A member of The Seven whose carbon-based skin allows him to become nearly invisible.',
+
+    detailedBio:
+      'Translucent is a specialized member of The Seven whose carbon-based skin allows him to bend light around his body and become almost completely invisible. His unusual skin also gives him extremely high durability, allowing him to withstand physical damage while remaining difficult to detect. These abilities make him particularly effective in situations where observation and secrecy are more important than direct confrontation. Vought can use Translucent for surveillance, security monitoring, discreet investigations, information gathering, and missions where approaching an area without being noticed provides an important advantage. His combination of invisibility and durability makes him one of The Seven’s strongest options for covert support and intelligence-related operations.',
 
     powers: [
       'Invisibility',

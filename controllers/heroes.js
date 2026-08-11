@@ -303,6 +303,7 @@ const updateReview = async (req, res)=>{
       if (!review.author.equals(req.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
 
       review.content = req.body.content
+      review.rating = req.body.rating
       await hero.save()
 
       res.status(200).json({message: 'Review updated!'})

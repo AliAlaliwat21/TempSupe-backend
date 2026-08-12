@@ -21,17 +21,34 @@ const createRequest = async (req, res)=>{
     }
 }
 
-const index = async (req, res)=>{
-    try {
-        const allRequests = await ServiceRequest.find({requester: req.user._id}).populate('hero').populate('requester').sort({createdAt: 'desc'})
+const index = async (req, res) => {
+  try {
+    const requests = await ServiceRequest.find()
+      .populate('hero')
+      .populate('requester')
 
-        if (!allRequests) return res.status(404).json({message: error.message})
+    res.status(200).json(requests)
+  } catch (error) {
+    res.status(500).json({
+      message: error.message
+    })
+  }
+}
 
-        res.status(200).json(allRequests)
-    } catch (error) {
-        res.status(500).json({message: error.message})
-    }
-    
+const userRequests = async (req, res) => {
+  try {
+    const requests = await ServiceRequest.find({
+      requester: req.user._id
+    })
+      .populate('hero')
+      .populate('requester')
+
+    res.status(200).json(requests)
+  } catch (error) {
+    res.status(500).json({
+      message: error.message
+    })
+  }
 }
 
 const showRequest = async (req, res)=>{
@@ -86,4 +103,4 @@ const updateRequest = async (req, res)=>{
 }
 
 
-module.exports = {createRequest, index, showRequest, deleteRequest, updateRequest}
+module.exports = {createRequest, index, userRequests, showRequest, deleteRequest, updateRequest}

@@ -370,9 +370,9 @@ const heroData = [
 
     theme: 'soldier-boy',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZm9yamMybHd5YW15NW5hdzl3N3F2aWk5NHVwNGo2a3JxZGxtbXRjeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/subE77y85Wun2bOHgD/giphy.gif',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXNnNTFjbXp0bThjNWR6eGJsc2FvcnI3bWY3bGlzZDJma3BxeDg0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q9ldmTuld2Vbifpp4W/giphy.gif'
   },
 
 
@@ -412,9 +412,9 @@ const heroData = [
 
     theme: 'crimson-countess',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdW757cFRDWsLXxlmPnKgX71vmWHItwn4YS6Hm_HO0wQ&s=10',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://64.media.tumblr.com/94003ba1277445c5630dfc8f79de3222/6d348dd854802105-1f/s540x810/031e89fdc8f9a7b32f9c266bf037254b42bac568.gif'
   },
 
 
@@ -455,9 +455,9 @@ const heroData = [
 
     theme: 'gunpowder',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://m.media-amazon.com/images/M/MV5BY2VhOGZhOTQtNTAwNC00Y2M1LTk4M2YtNDBhOTRmNDBlZDdjXkEyXkFqcGc@._V1_.jpg',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCF3mnZKj1UerWSstkvCkOUZPR59A3RzFl_Oz1GBXqUA&s=10'
   },
 
 
@@ -498,9 +498,9 @@ const heroData = [
 
     theme: 'mindstorm',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2022/06/the-boys-mindstorm.jpg?q=50&fit=crop&w=825&dpr=1.5',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2022/06/the-boys-mindstorm.jpg?q=50&fit=crop&w=825&dpr=1.5'
   },
 
 
@@ -540,9 +540,9 @@ const heroData = [
 
     theme: 'swatto',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSVDiemF641ExwT5R-UeV1ZaJnRZ5R4c_UP5vS3yNJOpVa9e_sjl0l5DA&s=10',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://hips.hearstapps.com/hmg-prod/images/screen-shot-2022-06-02-at-3-53-09-pm-1654200595.png'
   },
 
 
@@ -583,9 +583,9 @@ const heroData = [
 
     theme: 'tnt-twins',
 
-    backgroundVideo: paybackBackground,
+    backgroundVideo: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2022/06/the-boys-tnt-twins.jpg?q=50&fit=crop&w=825&dpr=1.5',
 
-    detailMedia: paybackBackground
+    detailMedia: 'https://static0.srcdn.com/wordpress/wp-content/uploads/2022/06/the-boys-tnt-twins.jpg?q=50&fit=crop&w=825&dpr=1.5'
   }
 
 ]

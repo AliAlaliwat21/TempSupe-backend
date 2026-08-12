@@ -736,9 +736,7 @@ const show = async (req, res) => {
 }
 
 
-// =====================================================
-// CREATE REVIEW
-// =====================================================
+
 
 const createReview = async (req, res) => {
 
@@ -788,9 +786,7 @@ const createReview = async (req, res) => {
 }
 
 
-// =====================================================
-// UPDATE REVIEW
-// =====================================================
+
 
 const updateReview = async (req, res) => {
 
@@ -852,9 +848,7 @@ const updateReview = async (req, res) => {
 }
 
 
-// =====================================================
-// DELETE REVIEW
-// =====================================================
+
 
 const deleteReview = async (req, res) => {
 

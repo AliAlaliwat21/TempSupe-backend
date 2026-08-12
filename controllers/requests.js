@@ -65,16 +65,40 @@ res.status(500).json({message: error.message})
     }
 }
 
-const deleteRequest = async (req, res)=>{
-    try{
-        const deletedRequest = await ServiceRequest.findByIdAndDelete(req.params.requestId) 
+const deleteRequest = async (req, res) => {
+  try {
 
-        if(!deletedRequest.requester.equals(res.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
+    const request = await ServiceRequest.findById(
+      req.params.requestId
+    )
 
-        res.status(200).json({message: "deleted successfully"})
-    }catch(error){
-        res.status(500).json({message: error.message})
+    if (!request) {
+      return res.status(404).json({
+        message: 'Request not found!'
+      })
     }
+
+    if (!request.requester.equals(req.user._id)) {
+      return res.status(403).json({
+        message: 'Unfortunately, you are NOT authorized to take such action!'
+      })
+    }
+
+    await ServiceRequest.findByIdAndDelete(
+      req.params.requestId
+    )
+
+    res.status(200).json({
+      message: 'Deleted successfully'
+    })
+
+  } catch (error) {
+
+    res.status(500).json({
+      message: error.message
+    })
+
+  }
 }
 
 const updateRequest = async (req, res) => {

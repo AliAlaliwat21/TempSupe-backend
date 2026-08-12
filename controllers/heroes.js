@@ -82,7 +82,7 @@ const heroData = [
     theme: 'queen-maeve',
 
     backgroundVideo:
-  'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGp1ZTZmeDh5dXRhNHo0NDQyZGd1bjAyeWNhNGgyM2xwYmFueGt4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SsORH77uPTO1xDp74f/giphy.gif',
 
 detailMedia:
   'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
@@ -251,7 +251,7 @@ detailMedia:
     theme: 'starlight',
 
     backgroundVideo:
-  'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWo3eTBmdWZod2Z4NWE3cm96ZXVlNmF0MXo3eW5kOXo5aHMycXk0aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SsORH77uPTO1xDp74f/giphy.gif',
 
 detailMedia:
   'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',

@@ -43,7 +43,9 @@ const heroData = [
   'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXhyZzRuZDhhZ24xN2JqaGprcGNxZTJzeXNqOHF1YmFnMTY2NmE0bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M4hVSYsq6KULTTe7dr/giphy.gif',
 
    detailMedia:
-  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+    ' https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHFydGZiaWppdGo5dmRjcGpwZWZkNTgxbW8xZWtuc3BpZW10aXo4ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eIUpSyzwGp0YhAMTKr/giphy.gif',
+
+  
   },
 
   {
@@ -82,7 +84,7 @@ const heroData = [
     theme: 'queen-maeve',
 
     backgroundVideo:
-  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGp1ZTZmeDh5dXRhNHo0NDQyZGd1bjAyeWNhNGgyM2xwYmFueGt4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SsORH77uPTO1xDp74f/giphy.gif',
+  'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
 
 detailMedia:
   'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
@@ -126,7 +128,7 @@ detailMedia:
   'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
 
 detailMedia:
-  'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
+  'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzh4ZGl0aWZkYmxzeTBoMWp0amZneXNtcnk2N3JrNHZobzhzZjFzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OurEZ9nyeJfH5Vc3Gt/giphy.gif',
   },
 
   {
@@ -292,7 +294,7 @@ detailMedia:
     theme: 'translucent',
 
     backgroundVideo:
-  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGI4enZwOTcwYWN4ajdlOG9ud3FjbTlkZTFvZHpxNzIxNHJzdnZrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JRrsVhXZYx6g4MVbJx/giphy.gif',
+  'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',
 
 detailMedia:
   'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',

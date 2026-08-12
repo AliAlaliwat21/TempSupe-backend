@@ -39,10 +39,10 @@ const heroData = [
 
     theme: 'homelander',
 
-    backgroundGif:
+    backgroundVideo:
   'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
 
-   detailGif:
+   detailMedia:
   'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
   },
 

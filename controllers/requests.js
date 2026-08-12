@@ -27,6 +27,7 @@ const index = async (req, res)=>{
 
         if (!allRequests) return res.status(404).json({message: error.message})
 
+        res.status(200).json(allRequests)
     } catch (error) {
         res.status(500).json({message: error.message})
     }

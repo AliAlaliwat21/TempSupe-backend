@@ -23,7 +23,7 @@ const createRequest = async (req, res)=>{
 
 const index = async (req, res)=>{
     try {
-        const allRequests = await ServiceRequest.find({}).populate('hero').sort({createdAt: 'desc'})
+        const allRequests = await ServiceRequest.find({requester: req.user._id}).populate('hero').populate('requester').sort({createdAt: 'desc'})
 
         if (!allRequests) return res.status(404).json({message: error.message})
 

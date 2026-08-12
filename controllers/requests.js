@@ -121,7 +121,7 @@ const deleteRequest = async (req, res) => {
         )
 
         res.status(200).json({
-            message: 'deleted successfully'
+            message: 'Deleted successfully'
         })
 
     } catch (error) {
@@ -190,4 +190,4 @@ module.exports = {
     showRequest,
     deleteRequest,
     updateRequest
-}//hello
+}

@@ -77,29 +77,54 @@ const deleteRequest = async (req, res)=>{
     }
 }
 
-const updateRequest = async (req, res)=>{
-    try {
-        const requestData = {
-            requester: req.user._id,
-            hero: req.body.hero,
-            requestType: req.body.requestType,
-            description: req.body.description,
-            location: req.body.location,
-            requestedDate: req.body.requestedDate,
-            status: req.body.status
+const updateRequest = async (req, res) => {
+  try {
 
-        } 
+    const request = await ServiceRequest.findById(
+      req.params.requestId
+    )
 
-        const updatedRequest = await ServiceRequest.findByIdAndUpdate(req.body.requestId, requestData, {new:true})
-
-        if (!updatedRequest) return res.status(404).json({message: error.message})
-
-        if (!updatedRequest.requester.equals(req.user._id)) return res.status(403).json({message: 'Unfortunately, you are NOT authorized to take such action!'})
-
-        res.status(202).json(updatedRequest)
-    } catch (error) {
-        res.status(500).json({message: error.message})
+    if (!request) {
+      return res.status(404).json({
+        message: 'Request not found!'
+      })
     }
+
+
+    if (!request.requester.equals(req.user._id)) {
+      return res.status(403).json({
+        message: 'Unfortunately, you are NOT authorized to take such action!'
+      })
+    }
+
+
+    const requestData = {
+      hero: req.body.hero,
+      requestType: req.body.requestType,
+      description: req.body.description,
+      location: req.body.location,
+      requestedDate: req.body.requestedDate,
+      status: req.body.status
+    }
+
+
+    const updatedRequest =
+      await ServiceRequest.findByIdAndUpdate(
+        req.params.requestId,
+        requestData,
+        { new: true }
+      )
+
+
+    res.status(200).json(updatedRequest)
+
+  } catch (error) {
+
+    res.status(500).json({
+      message: error.message
+    })
+
+  }
 }
 
 

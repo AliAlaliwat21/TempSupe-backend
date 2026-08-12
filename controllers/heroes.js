@@ -40,7 +40,7 @@ const heroData = [
     theme: 'homelander',
 
     backgroundVideo:
-  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+  'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXhyZzRuZDhhZ24xN2JqaGprcGNxZTJzeXNqOHF1YmFnMTY2NmE0bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M4hVSYsq6KULTTe7dr/giphy.gif',
 
    detailMedia:
   'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
@@ -81,10 +81,10 @@ const heroData = [
 
     theme: 'queen-maeve',
 
-    backgroundGif:
+    backgroundVideo:
   'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
 
-detailGif:
+detailMedia:
   'https://media.giphy.com/media/6skWNFodQNufLvNedR/giphy.gif',
   },
 
@@ -122,10 +122,10 @@ detailGif:
 
     theme: 'a-train',
 
-    backgroundGif:
+    backgroundVideo:
   'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
 
-detailGif:
+detailMedia:
   'https://media.giphy.com/media/KLpIxuNBytsGDEcXHH/giphy.gif',
   },
 
@@ -164,11 +164,11 @@ detailGif:
 
     theme: 'the-deep',
 
-    backgroundGif:
-  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+    backgroundVideo:
+  'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTB1NGZkNGI4c2VwdTRxZmp0enF6N3F0a2xwbXo4eDM4bTl2bDBuYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WUwdqYmGaLhP1TVhrL/giphy.gif',
 
-detailGif:
-  'https://media.giphy.com/media/IZ0IshI0uKhQgXuCVx/giphy.gif',
+detailMedia:
+  'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTYxM2xubHNnOXpzYjc5dDF0YTF6d2ZkaXZsZWx5ZWhkeXZlZzJueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KGZV1LCLScDT8rz11H/giphy.gif',
   },
 
   {
@@ -206,10 +206,10 @@ detailGif:
 
     theme: 'black-noir',
 
-    backgroundGif:
+    backgroundVideo:
   'https://media.giphy.com/media/HpOzYMoVxeyFZ094sc/giphy.gif',
 
-detailGif:
+detailMedia:
   'https://media.giphy.com/media/HpOzYMoVxeyFZ094sc/giphy.gif',
     
 
@@ -250,10 +250,10 @@ detailGif:
 
     theme: 'starlight',
 
-    backgroundGif:
+    backgroundVideo:
   'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',
 
-detailGif:
+detailMedia:
   'https://media.giphy.com/media/lGBYh6gumpyVm0af1i/giphy.gif',
   },
 
@@ -291,10 +291,10 @@ detailGif:
 
     theme: 'translucent',
 
-    backgroundGif:
-  'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',
+    backgroundVideo:
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGI4enZwOTcwYWN4ajdlOG9ud3FjbTlkZTFvZHpxNzIxNHJzdnZrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JRrsVhXZYx6g4MVbJx/giphy.gif',
 
-detailGif:
+detailMedia:
   'https://media1.tenor.com/m/8mkAkl-cxBQAAAAd/the-boys-hughie-campbell.gif',
   }
 ]
@@ -320,19 +320,41 @@ const index = async (req, res) => {
       res.status(500).json({ error: error.message }) 
     } }
 
-const show = async(req,res)=>{
-        try{
-            const hero = await Hero.findById(req.params.heroId)
+const show = async (req, res) => {
+    try {
 
-            if(!hero){
-                return res.status(404).json({err: 'hero not found'})
-            }
-            res.status(200).json(hero)
-        } catch(error){
-            res.status(500).json({error: error.message})
+        const hero = await Hero.findById(req.params.heroId)
+
+        if (!hero) {
+            return res.status(404).json({
+                error: 'Hero not found'
+            })
         }
-        
-  }
+
+
+        const staticHero = heroData.find((item) => {
+            return item.name === hero.name
+        })
+
+
+        const heroDetails = {
+            ...hero.toObject(),
+            ...staticHero,
+            _id: hero._id,
+            reviews: hero.reviews
+        }
+
+
+        res.status(200).json(heroDetails)
+
+    } catch (error) {
+
+        res.status(500).json({
+            error: error.message
+        })
+
+    }
+}
 
 
 const createReview = async (req, res) => {

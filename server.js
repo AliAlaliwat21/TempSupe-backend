@@ -51,6 +51,7 @@ app.delete('/heroes/:heroId/reviews/:reviewId', verifyToken, heroCtrl.deleteRevi
 //Request routes
 app.post('/service-requests', verifyToken, requestCtrl.createRequest)
 app.get('/service-requests', verifyToken, requestCtrl.index)
+app.get('/service-requests/my-requests', verifyToken, requestCtrl.userRequests)
 app.get('/service-requests/:requestId', verifyToken, requestCtrl.showRequest)
 app.delete('/service-requests/:requestId', verifyToken, requestCtrl.deleteRequest)
 app.put('/service-requests/:requestId', verifyToken, requestCtrl.updateRequest)
